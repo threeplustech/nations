@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const cors = require('cors');
 const port = process.env.PORT || 3000
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -7,6 +8,7 @@ const nations = require("./nations");
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 nations.setJson(path.join(__dirname,"/nations.json"));
 console.log(path.join(__dirname,"/nations.json"));
 
