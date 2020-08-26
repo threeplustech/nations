@@ -29,7 +29,7 @@ app.get("/getStatesForCountry/:country", (req, res, next)=>{
   }
 })
 
-app.get("getCitiesForState/:country/:state", (req, res, next)=>{
+app.get("/getCitiesForState/:country/:state", (req, res, next)=>{
   var cities = nations.getCityForState(req.params.country, req.params.state);
   if(cities){
     res.json({status: 200, data: {cities: cities}, message: "Cities fetched successfully"});
