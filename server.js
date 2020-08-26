@@ -10,6 +10,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 nations.setJson(path.join(__dirname,"/nations.json"));
 console.log(path.join(__dirname,"/nations.json"));
 
+app.get("/", (req, res, next)=>{
+  res.send("Welcome to the nations archive.");
+})
+
 app.get("/getCountries", (req, res, next)=>{
   var countries = nations.getCountries();
   if(countries){
